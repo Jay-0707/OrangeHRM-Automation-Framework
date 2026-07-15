@@ -1,0 +1,61 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="OrangeHRM Suite">
+
+	<listeners>
+		<listener class-name="utilities.TestListener" />
+	</listeners>
+
+	<parameter name="browser" value="chrome"/>
+	
+	<test name="OrangeHRM Tests">
+
+		<classes>
+			<!--<class name="testCases.TC009_ResetPasswordTest"></class> <class name="testCases.TC008_ForgotPasswordLinkTest"></class> -->
+
+			<class name="testCases.TC001_VerifyApplicationLaunch"></class>
+
+			<!-- ===================== -->
+			<!-- Module 1 : Login -->
+			<!-- ===================== -->
+			<class name="testCases.TC002_LoginTest"></class>
+			<class name="testCases.TC003_InvalidLoginTest"></class>
+			<class name="testCases.TC004_LoginDataProviderTest"></class>
+
+			<!-- ===================== -->
+			<!-- Module 2 : Dashboard -->
+			<!-- ===================== -->
+			<class name="testCases.TC005_BlankUsernameTest"></class>
+			<class name="testCases.TC006_BlankPasswordTest"></class>
+			<class name="testCases.TC007_BlankUsernameAndPasswordTest"></class>
+			<class name="testCases.TC010_LogoutTest"></class>
+
+			<!-- ===================== -->
+			<!-- Module 3 : PIM -->
+			<!-- ===================== -->
+			<class name="testCases.TC011_NavigateToPIMTest"></class>
+			<class name="testCases.TC012_AddEmployeeTest"></class>
+			<class name="testCases.TC013_SearchEmployeeTest"></class>
+			<class name="testCases.TC014_EditEmployeeTest"></class>
+			<class name="testCases.TC015_DeleteEmployeeTest"></class>
+			<class name="testCases.TC016_SearchInvalidEmployeeTest"></class>
+			<class name="testCases.TC017_ResetSearchTest"></class>
+			<class name="testCases.TC018_SearchEmployeeByNameTest"></class>
+
+			<!-- ===================== -->
+			<!-- Module 4 : Admin -->
+			<!-- ===================== -->
+			<class name="testCases.TC019_NavigateToAdminTest"></class>
+			<class name="testCases.TC020_VerifyAddUserPage"></class>
+			<class name="testCases.TC021_AddUserTest"></class>
+			<class name="testCases.TC022_SearchUser"></class>
+			<class name="testCases.TC023_EditUserTest"></class>
+			<class name="testCases.TC024_DeleteUser"></class>
+
+
+		</classes>
+
+
+	</test>
+
+</suite>
