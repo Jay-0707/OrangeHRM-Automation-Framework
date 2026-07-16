@@ -38,8 +38,8 @@ public class PIMPage extends BasePage {
 	@FindBy(xpath = "//div[@class='orangehrm-container']")
 	private WebElement searchResults;
 
-	@FindBy(xpath = "//div[@class=\"orangehrm-container\"]//div[@class=\"oxd-table-body\"]//div[@role=\"cell\"][3]")
-	private WebElement employeeFirstNameResult;
+	private By employeeFirstNameResult = By
+			.xpath("//div[@class='orangehrm-container']//div[@class='oxd-table-body']//div[@role='cell'][3]");
 
 	@FindBy(xpath = "//div[@role='rowgroup']//div[1]//div[1]//div[2]")
 	private WebElement employeeIdResult;
@@ -86,7 +86,7 @@ public class PIMPage extends BasePage {
 	}
 
 	public void searchEmployee(String employeename) {
-		
+
 		enterEmployeeName(employeename);
 		clickSearch();
 	}
@@ -104,9 +104,10 @@ public class PIMPage extends BasePage {
 	}
 
 	public String getEmployeeFirstNameFromResult() {
-		WaitUtility waitUtility = new WaitUtility(driver);
-		waitUtility.waitForElementVisible(employeeFirstNameResult);
-		return employeeFirstNameResult.getText();
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement employeeName = wait.until(ExpectedConditions.visibilityOfElementLocated(employeeFirstNameResult));
+		return employeeName.getText().trim();
 	}
 
 	public String getEmployeeIdFromResult() {

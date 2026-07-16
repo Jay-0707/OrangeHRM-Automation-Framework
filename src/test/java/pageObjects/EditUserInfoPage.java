@@ -15,12 +15,12 @@ public class EditUserInfoPage extends BasePage {
 	@FindBy(xpath = "//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]")
 	private WebElement drpStatus;
 
-	@FindBy(xpath = "//div[@class='oxd-grid-item oxd-grid-item--gutters']//div[3]")
+	@FindBy(xpath = "//div[@role='option']//span[text()='Disabled']")
 	private WebElement btnDisabled;
 
 	@FindBy(xpath = "//button[@type=\"submit\"]")
 	private WebElement btnSave;
-	
+
 	public void clickStatusDropDown() {
 		WaitUtility waitUtility = new WaitUtility(driver);
 		waitUtility.waitForElementClickable(drpStatus);
@@ -28,11 +28,15 @@ public class EditUserInfoPage extends BasePage {
 	}
 
 	public void selectDisableStatusOption() {
-		WaitUtility waitUtility = new WaitUtility(driver);
-		waitUtility.waitForElementClickable(btnDisabled);
-		btnDisabled.click();
+
+	    WaitUtility waitUtility = new WaitUtility(driver);
+
+	    waitUtility.waitForElementVisible(btnDisabled);
+	    waitUtility.waitForElementClickable(btnDisabled);
+
+	    btnDisabled.click();
 	}
-	
+
 	public void clickSaveBtn() {
 		WaitUtility waitUtility = new WaitUtility(driver);
 		waitUtility.waitForElementClickable(btnSave);

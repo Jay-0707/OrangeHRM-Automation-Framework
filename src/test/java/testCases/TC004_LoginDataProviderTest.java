@@ -18,7 +18,7 @@ public class TC004_LoginDataProviderTest extends BaseClass {
 		logger.info("Passing username and password from excel file...");
 		loginPage.login(username, password);
 
-		logger.info("...");
+		logger.info("Assertion Start");
 		if (expectedResult.equals("Pass")) {
 			DashboardPage dashboardPage = new DashboardPage(driver);
 			Assert.assertTrue(dashboardPage.isDashboardDisplayed());
@@ -27,7 +27,9 @@ public class TC004_LoginDataProviderTest extends BaseClass {
 		else {
 			Assert.assertEquals(loginPage.getErrorMessage(), "Invalid credentials");
 		}
+		logger.info("Assertion Ends");
 		logger.info("TC004_LoginDataProviderTest End...");
 	}
+	
 
 }
