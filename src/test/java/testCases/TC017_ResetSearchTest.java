@@ -8,7 +8,7 @@ import pageObjects.DashboardPage;
 import pageObjects.LoginPage;
 import pageObjects.PIMPage;
 
-@Test
+@Test(groups = {"pim","regression"})
 public class TC017_ResetSearchTest extends BaseClass {
 
 	public void verifyResetSearch()

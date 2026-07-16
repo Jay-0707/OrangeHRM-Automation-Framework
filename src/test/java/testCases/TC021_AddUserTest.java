@@ -11,7 +11,7 @@ import pageObjects.LoginPage;
 
 public class TC021_AddUserTest extends BaseClass {
 
-	@Test
+	@Test(groups = {"admin","regression","e2e","sanity"})
 	public void verifyAddUser() throws InterruptedException {
 
 		logger.info("TC020_VerifyAddUserPage starts");

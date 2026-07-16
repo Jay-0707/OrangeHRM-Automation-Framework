@@ -11,7 +11,7 @@ import pageObjects.PIMPage;
 
 public class TC014_EditEmployeeTest extends BaseClass {
 
-	@Test
+	@Test(groups = {"pim","regression","e2e"})
 	public void verifyEditEmployee() {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(config.getUsername(), config.getPassword());

@@ -10,7 +10,7 @@ import pageObjects.PIMPage;
 
 public class TC018_SearchEmployeeByNameTest extends BaseClass {
 
-	@Test
+	@Test(groups = {"pim","regression"})
 	public void verifySearchEmployeeByName() {
 
 		LoginPage loginPage = new LoginPage(driver);

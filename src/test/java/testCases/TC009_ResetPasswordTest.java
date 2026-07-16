@@ -8,7 +8,7 @@ import pageObjects.LoginPage;
 
 public class TC009_ResetPasswordTest extends BaseClass{
 
-	@Test
+	@Test(groups = {"login","regression"})
 	public void verifyResetPassword()
 	{
 		LoginPage loginPage=new LoginPage(driver);

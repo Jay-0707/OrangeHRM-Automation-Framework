@@ -8,7 +8,7 @@ import pageObjects.LoginPage;
 
 public class TC003_InvalidLoginTest extends BaseClass {
 
-	@Test
+	@Test(groups = {"login","regression"})
 	public void verifyInvalidLogin() {
 		logger.info("TC003_InvalidLoginTest start...");
 		String username = "Admin";

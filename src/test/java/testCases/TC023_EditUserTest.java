@@ -12,7 +12,7 @@ import utilities.TestData;
 
 public class TC023_EditUserTest extends BaseClass{
 
-	@Test
+	@Test(groups = {"admin","regression","e2e"})
 	public void verifyEditUserTest() throws InterruptedException
 	{
 		logger.info("TC023_EditUserTest Starts");

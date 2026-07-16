@@ -12,7 +12,7 @@ import utilities.TestData;
 public class TC022_SearchUser extends BaseClass{
 
 	
-	@Test
+	@Test(groups = {"admin","regression","e2e"})
 	public void verifySearchUser() throws InterruptedException
 	{
 		logger.info("TC022_SearchUser Starts");

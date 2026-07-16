@@ -11,7 +11,7 @@ import pageObjects.LoginPage;
 
 public class TC020_VerifyAddUserPage extends BaseClass{
 
-	@Test
+	@Test(groups = {"admin","regression"})
 	public void VerifyAddUserPageIsDisplayed()
 	{
 		logger.info("TC020_VerifyAddUserPage starts");

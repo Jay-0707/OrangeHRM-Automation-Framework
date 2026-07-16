@@ -9,7 +9,7 @@ import pageObjects.LoginPage;
 
 public class TC008_ForgotPasswordLinkTest extends BaseClass {
 
-	@Test
+	@Test(groups = {"login","regression"})
 	public void verifyForgotPage() {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickForgotPassword();

@@ -8,7 +8,7 @@ import pageObjects.LoginPage;
 
 public class TC006_BlankPasswordTest extends BaseClass {
 
-	@Test
+	@Test(groups = {"login","regression"})
 	public void verifyBlankPassword() {
 		LoginPage loginPage = new LoginPage(driver);
 

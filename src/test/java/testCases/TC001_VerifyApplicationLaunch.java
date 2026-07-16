@@ -7,7 +7,7 @@ import baseClass.BaseClass;
 
 public class TC001_VerifyApplicationLaunch extends BaseClass {
 
-	@Test
+	@Test(groups = {"sanity","sanity","regression"})
 	public void verifyApplicationLaunch() {
 		logger.info("TC001_VerifyApplicationLaunch start...");
 		logger.info("Getting Title...");

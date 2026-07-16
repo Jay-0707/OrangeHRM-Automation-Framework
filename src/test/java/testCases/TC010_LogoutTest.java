@@ -9,7 +9,7 @@ import pageObjects.LoginPage;
 
 public class TC010_LogoutTest extends BaseClass {
 
-	@Test
+	@Test(groups = {"smoke","sanity","regression","login","e2e"})
 	public void verifyLogout() {
 
 		LoginPage loginPage = new LoginPage(driver);

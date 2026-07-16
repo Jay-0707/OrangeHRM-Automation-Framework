@@ -8,7 +8,7 @@ import pageObjects.AdminPage;
 import pageObjects.DashboardPage;
 import pageObjects.LoginPage;
 
-@Test
+@Test(groups = {"admin","regression","e2e"})
 public class TC019_NavigateToAdminTest extends BaseClass {
 
 	public void verifySystemUserPageIsDisplayed() {

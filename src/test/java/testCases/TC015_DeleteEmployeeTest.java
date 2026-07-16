@@ -10,7 +10,7 @@ import pageObjects.PIMPage;
 
 public class TC015_DeleteEmployeeTest extends BaseClass{
 
-	@Test
+	@Test(groups = {"pim","regression","e2e"})
 	public void verifyDeleteEmployee()
 	{
 		LoginPage loginPage=new LoginPage(driver);

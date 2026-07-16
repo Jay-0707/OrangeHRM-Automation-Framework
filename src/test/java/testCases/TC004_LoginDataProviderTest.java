@@ -10,7 +10,7 @@ import utilities.TestData;
 
 public class TC004_LoginDataProviderTest extends BaseClass {
 
-	@Test(dataProvider = "loginData", dataProviderClass = TestData.class)
+	@Test(dataProvider = "loginData", dataProviderClass = TestData.class ,groups = {"login","regression"})
 	public void verifyLogin(String username, String password, String expectedResult) {
 
 		logger.info("TC004_LoginDataProviderTest Start...");

@@ -5,13 +5,16 @@
 	<listeners>
 		<listener class-name="utilities.TestListener" />
 	</listeners>
+	
+	
 
 	<parameter name="browser" value="chrome"/>
 	
 	<test name="OrangeHRM Tests">
 
 		<classes>
-			<!--<class name="testCases.TC009_ResetPasswordTest"></class> <class name="testCases.TC008_ForgotPasswordLinkTest"></class> -->
+			<!--<class name="testCases.TC009_ResetPasswordTest"></class> -->
+			<!--<class name="testCases.TC008_ForgotPasswordLinkTest"></class> -->
 
 			<class name="testCases.TC001_VerifyApplicationLaunch"></class>
 

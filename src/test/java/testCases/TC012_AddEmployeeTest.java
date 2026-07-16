@@ -13,7 +13,7 @@ import pageObjects.PIMPage;
 public class TC012_AddEmployeeTest extends BaseClass{
 
 	
-	@Test
+	@Test(groups = {"pim","regression","e2e","sanity"})
 	public void verifyAddEmployee()
 	{
 		LoginPage loginPage=new LoginPage(driver);

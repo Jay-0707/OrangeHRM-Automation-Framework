@@ -10,7 +10,7 @@ import pageObjects.PIMPage;
 
 public class TC011_NavigateToPIMTest extends BaseClass {
 
-	@Test
+	@Test(groups = {"pim","regression","e2e"})
 	public void verifyPIMPage() {
 
 		LoginPage loginPage = new LoginPage(driver);

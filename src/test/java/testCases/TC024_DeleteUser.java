@@ -11,7 +11,7 @@ import utilities.TestData;
 
 public class TC024_DeleteUser extends BaseClass{
 
-	@Test
+	@Test(groups = {"admin","regression","e2e"})
 	public void verifyDeleteUser() throws InterruptedException
 	{
 		logger.info("TC024_DeleteUser Starts");

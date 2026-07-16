@@ -9,7 +9,7 @@ import pageObjects.LoginPage;
 
 public class TC002_LoginTest extends BaseClass {
 
-	@Test
+	@Test(groups = {"smoke","sanity","regression","login","e2e"})
 	public void verifyLoginPage() throws InterruptedException {
 		logger.info("TC002_LoginTest Started...");
 		LoginPage loginPage = new LoginPage(driver);
