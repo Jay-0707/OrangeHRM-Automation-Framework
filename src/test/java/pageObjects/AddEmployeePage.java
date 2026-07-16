@@ -1,10 +1,12 @@
 package pageObjects;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import utilities.WaitUtility;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddEmployeePage extends BasePage {
 
@@ -31,8 +33,9 @@ public class AddEmployeePage extends BasePage {
 
 	public void clickSave() {
 
-		WaitUtility waitUtility = new WaitUtility(driver);
-		waitUtility.waitForElementClickable(btnSave);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+		wait.until(ExpectedConditions.elementToBeClickable(btnSave));
 
 		btnSave.click();
 

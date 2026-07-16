@@ -21,6 +21,6 @@ public class TC018_SearchEmployeeByNameTest extends BaseClass {
 
 		PIMPage pimPage = new PIMPage(driver);
 		pimPage.searchEmployee("Adam");
-		Assert.assertEquals(pimPage.getEmployeeFirstNameFromResult(), "Adam");
+		Assert.assertEquals(pimPage.getEmployeeFirstNameFromResult(),"Adam");
 	}
 }

@@ -1,5 +1,8 @@
 package testCases;
 
+import java.time.Duration;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -21,6 +24,10 @@ public class TC013_SearchEmployeeTest extends BaseClass{
 		
 		PIMPage pimPage=new PIMPage(driver);
 		pimPage.searchEmployeeByID(employeeId);
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+		wait.until(driver ->pimPage.getEmployeeIdFromResult().equals(employeeId));
 		
 		Assert.assertEquals(pimPage.getEmployeeIdFromResult(), employeeId);
 	}

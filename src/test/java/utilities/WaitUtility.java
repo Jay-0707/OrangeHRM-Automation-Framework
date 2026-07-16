@@ -15,7 +15,7 @@ public class WaitUtility {
 	public WaitUtility(WebDriver driver) {
 		this.driver = driver;
 
-		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	}
 
 	public void waitForElementVisible(WebElement element) {
@@ -25,5 +25,7 @@ public class WaitUtility {
 	public void waitForElementClickable(WebElement element) {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
+	
+	
 
 }

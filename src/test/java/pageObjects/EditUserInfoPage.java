@@ -12,7 +12,7 @@ public class EditUserInfoPage extends BasePage {
 		super(driver);
 	}
 
-	@FindBy(xpath = "//label[normalize-space()='Status']/following::div[@class=\"oxd-select-text oxd-select-text--active\"]")
+	@FindBy(xpath = "//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]")
 	private WebElement drpStatus;
 
 	@FindBy(xpath = "//div[@class='oxd-grid-item oxd-grid-item--gutters']//div[3]")

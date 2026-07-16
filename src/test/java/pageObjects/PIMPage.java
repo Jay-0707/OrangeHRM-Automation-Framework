@@ -1,8 +1,13 @@
 package pageObjects;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utilities.WaitUtility;
 
@@ -39,8 +44,7 @@ public class PIMPage extends BasePage {
 	@FindBy(xpath = "//div[@role='rowgroup']//div[1]//div[1]//div[2]")
 	private WebElement employeeIdResult;
 
-	@FindBy(xpath = "//i[@class='oxd-icon bi-trash']/parent::button")
-	private WebElement btnDelete;
+	By btnDelete = By.xpath("//i[@class='oxd-icon bi-trash']/parent::button");
 
 	@FindBy(xpath = "//button[normalize-space()='Yes, Delete']")
 	private WebElement btnYesDelete;
@@ -60,18 +64,29 @@ public class PIMPage extends BasePage {
 	}
 
 	public void enterEmployeeName(String employeename) {
+		txtEmployeeName.clear();
 		txtEmployeeName.sendKeys(employeename);
 	}
 
 	public void enterEmployeeId(String employeeID) {
+		WaitUtility waitUtility = new WaitUtility(driver);
+		waitUtility.waitForElementVisible(txtEmployeeId);
+
+		txtEmployeeId.clear();
 		txtEmployeeId.sendKeys(employeeID);
 	}
 
 	public void clickSearch() {
+		WaitUtility waitUtility = new WaitUtility(driver);
+		waitUtility.waitForElementClickable(btnSearch);
+
 		btnSearch.click();
+
+		waitUtility.waitForElementVisible(searchResults);
 	}
 
 	public void searchEmployee(String employeename) {
+		
 		enterEmployeeName(employeename);
 		clickSearch();
 	}
@@ -98,13 +113,15 @@ public class PIMPage extends BasePage {
 		WaitUtility waitUtility = new WaitUtility(driver);
 		waitUtility.waitForElementVisible(employeeIdResult);
 
-		return employeeIdResult.getText();
+		return employeeIdResult.getText().trim();
 	}
 
 	public void clickDeleteEmployee() {
-		WaitUtility waitUtility = new WaitUtility(driver);
-		waitUtility.waitForElementClickable(btnDelete);
-		btnDelete.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		WebElement deleteBtn = wait.until(ExpectedConditions.elementToBeClickable(btnDelete));
+
+		deleteBtn.click();
 	}
 
 	public void clickYesDelete() {

@@ -36,7 +36,15 @@ public class EmployeeDetailsPage extends BasePage {
 	}
 
 	public String getEmployeeId() {
-		return txtEmployeeId.getAttribute("value");
+
+	    WaitUtility waitUtility = new WaitUtility(driver);
+	    waitUtility.waitForElementVisible(txtEmployeeId);
+
+	    while (txtEmployeeId.getAttribute("value").trim().isEmpty()) {
+			// wait until Employee ID is populated
+	    }
+
+	    return txtEmployeeId.getAttribute("value").trim();
 	}
 
 	public void clickEdit() {
